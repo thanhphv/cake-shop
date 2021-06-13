@@ -1,0 +1,45 @@
+:root {
+  --main-color: #ef7147;
+  --text-color: #3c3c3c;
+  --lg-lightcolor: linear-gradient(
+    to left,
+    rgba(116, 235, 213, 0.6),
+    rgba(159, 172, 230, 0)
+  );
+  --lg-color: linear-gradient(to left, #74ebd5, #9face6);
+}
+
+@font-face {
+  font-family: UTMBryantLG_B;
+  src: url(../font/UTMBryantLG_B.ttf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "UTMBryantLG_B", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+.grid {
+  width: 90%;
+  max-width: 100%;
+  margin: 0 auto;
+}

@@ -83,7 +83,32 @@
   color: #333;
 }
 
-.user a:hover {
+.user-logout a:hover {
+  color: var(--main-color);
+}
+
+.user-logout.logout-deactive {
+  display: none;
+}
+
+.user-logined {
+  display: none;
+}
+
+.user-logined.login-active {
+  display: block;
+}
+
+.username-logined {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+.btn-logout {
+  cursor: pointer;
+}
+
+.btn-logout:hover {
   color: var(--main-color);
 }
 
@@ -151,7 +176,7 @@
 
 .menu-down {
   position: absolute;
-  right: -100px;
+  right: -80px;
   top: 40px;
   width: 220px;
   display: none;

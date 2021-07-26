@@ -64,11 +64,9 @@ function renderProduct(products) {
 
 function renderList(totalPages, currentPage) {
   let html = "";
-  // html += `<li class="active-link"><a>${1}</a></li>`;
   for (i = 1; i <= totalPages; i++) {
-    html += `<li class="${
-      currentPage === i ? "active-number" : ""
-    }"><a>${i}</a></li>`;
+    html += `<li class="${currentPage === i ? "active-number" : ""
+      }"><a>${i}</a></li>`;
   }
 
   document.querySelector(".number-page").innerHTML = html;

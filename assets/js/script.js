@@ -54,7 +54,30 @@ function hideNav() {
   nav.style.transition = "all 0.3s ease 0.5s";
 }
 
-// slide
+// userLogined
+
+const userLogout = document.querySelector('.user-logout')
+const userLogined = document.querySelector('.user-logined')
+const btnLogout = document.querySelector('.btn-logout')
+const usernameLogined = document.querySelector('.username-logined')
+
+function userLogin() {
+  let jsonUserLoginedData = JSON.parse(localStorage.getItem('userLoginedData'));
+  usernameLogined.textContent = jsonUserLoginedData[0].name
+  if (jsonUserLoginedData.length > 0) {
+    userLogined.classList.add('login-active')
+    userLogout.classList.add('logout-deactive')
+  } else {
+    userLogout.classList.remove('logout-deactive')
+  }
+}
+userLogin()
+
+btnLogout.addEventListener('click', () => {
+  localStorage.removeItem('userLoginedData')
+  userLogout.classList.remove('logout-deactive')
+  userLogined.classList.remove('login-active')
+})
 
 // call-api
 const teaAPI = "https://food-server-db.herokuapp.com/tea";
@@ -346,3 +369,4 @@ mobileItem.addEventListener("change", function (e) {
       break;
   }
 });
+

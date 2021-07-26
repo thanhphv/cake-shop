@@ -2,12 +2,6 @@ const formLogin = document.getElementById("form-login");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 
-function showUser(usernameVal) {
-  var html = `
-  <span>Xin chào ${usernameVal}, <a href="javascript: void (0)">đăng xuất</a></span>
-  `;
-  document.getElementById("user").innerHTML = html;
-}
 
 formLogin.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -19,28 +13,39 @@ function loginForm() {
   const usernameVal = username.value.trim();
   const passwordVal = password.value.trim();
   const userData = getUserFromLocalStorage();
-  for (let i = 0; i < userData.length; i++) {
-    if (
-      userData[i].name === usernameVal &&
-      userData[i].password === passwordVal
-    ) {
-      swal("Đăng nhập thành công");
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 2000);
+  const userLoginedArr = []
+  let checkUser = userData.find(x => x.name === usernameVal)
+  let checkPassword = userData.find(x => x.password === passwordVal)
+  if (checkUser && checkPassword) {
+    var userLogined = createUserLogined(usernameVal)
+    if (userLoginedArr != null) {
+      userLoginedArr.push(userLogined)
     } else {
-      swal("Đăng nhập thất bại, vui lòng kiểm tra lại thông tin");
+      userLoginedArr.fill(userLogined)
     }
+    localStorage.setItem('userLoginedData', JSON.stringify(userLoginedArr))
+    swal("Đăng nhập thành công");
+    setTimeout(() => {
+      history.back()
+    }, 2000);
+  } else {
+    swal("Đăng nhập thất bại, vui lòng kiểm tra lại thông tin");
   }
 }
 
-var keyUser = "userData";
 
 function getUserFromLocalStorage() {
   var userData = new Array();
-  var jsonUserData = localStorage.getItem(keyUser);
+  var jsonUserData = localStorage.getItem('userData');
   if (jsonUserData != null) {
     userData = JSON.parse(jsonUserData);
   }
   return userData;
+}
+
+function createUserLogined(usernameVal, isLogined) {
+  var userLogined = new Object();
+  (userLogined.name = usernameVal),
+    (userLogined.isLogined = true);
+  return userLogined;
 }

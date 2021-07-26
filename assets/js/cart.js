@@ -62,9 +62,8 @@ function renderCart() {
       dataLocal.forEach((x, index) => {
         var item = productData.find((c) => String(c.id) === String(x.id));
         var html = `
-          <div class="item-cart" id-product = ${item.id} price-product="${
-          item.price
-        }" quantity-product="${x.quantity}">
+          <div class="item-cart" id-product = ${item.id} price-product="${item.price
+          }" quantity-product="${x.quantity}">
               <div style="width: 18%">
                   <div class="image">
                       <img src="${item.url}" alt="">
@@ -73,17 +72,14 @@ function renderCart() {
               <div style="width: 32%" class="product-name">
                   <h3>${item.name}</h3>
               </div>
-              <div style="width: 17%" class="product-price">${
-                item.price
-              }.000₫</div>
+              <div style="width: 17%" class="product-price">${item.price
+          }.000₫</div>
               <div style="width: 14%" class="product-quantity">
-                  <input class="input-quantity" type="number" value="${
-                    x.quantity
-                  }">
+                  <input class="input-quantity" type="number" value="${x.quantity
+          }">
               </div>
-              <div style="width: 14%" class="product-price-total">${
-                item.price * x.quantity
-              }.000₫</div>
+              <div style="width: 14%" class="product-price-total">${item.price * x.quantity
+          }.000₫</div>
               <div style="width: 5%" class="delete" onclick="removeCart(${index})">
                   <i class="far fa-trash-alt"></i>
               </div>
@@ -117,22 +113,10 @@ function removeCart(index) {
   window.location.reload();
 }
 
-// total cost
-// function totalCost() {
-//   var productLocal = getLocalStorage();
-//   var totalCost = 0;
-//   for (let i = 0; i < productLocal.length; i++) {
-//     totalCost += productLocal[i].quantity * productLocal[i].price;
-//   }
-//   document.querySelector(".product-total").innerHTML = totalCost + ".000₫";
-//   return totalCost;
-// }
-
 // update cart
 function updateCart() {
   var productPrice = 0;
   var total = 0;
-  // var totalItem = 0;
   var cart = document.getElementsByClassName("card-body")[0];
   var cartItems = cart.querySelectorAll(".item-cart");
   cartItems.forEach(function (cartItem) {
@@ -143,6 +127,7 @@ function updateCart() {
       quantityElement.addEventListener("change", function (e) {
         var quantity = e.target.value;
         if (isNaN(quantity) || quantity <= 0) {
+          quantityElement.value = 1;
           quantity = 1;
         }
         productPrice = quantity * price;
@@ -195,22 +180,3 @@ var btnElement = document.querySelector(".btn-checkout-cart");
 btnElement.addEventListener("click", function () {
   window.location.href = "checkout.html";
 });
-// CheckChangeStorage();
-
-// function CheckChangeStorage() {
-//   var originalSetItem = localStorage.setItem;
-
-//   localStorage.setItem = function (key, value) {
-//     var event = new Event("itemInserted");
-
-//     document.dispatchEvent(event);
-
-//     originalSetItem.apply(this, arguments);
-//   };
-
-//   var localStorageSetHandler = function (e) {
-//     alert(`1`);
-//   };
-
-//   document.addEventListener("itemInserted", localStorageSetHandler, false);
-// }

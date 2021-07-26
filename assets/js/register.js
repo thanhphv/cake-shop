@@ -120,7 +120,8 @@ function createUser(usernameVal, emailVal, passwordVal) {
   (user.id = uuidv4()),
     (user.name = usernameVal),
     (user.email = emailVal),
-    (user.password = passwordVal);
+    (user.password = passwordVal),
+    (user.logined = false);
   return user;
 }
 var keyUser = "userData";

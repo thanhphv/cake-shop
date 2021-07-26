@@ -26,7 +26,7 @@ function loginForm() {
     localStorage.setItem('userLoginedData', JSON.stringify(userLoginedArr))
     swal("Đăng nhập thành công");
     setTimeout(() => {
-      history.back()
+      window.location.href = "index.html"
     }, 2000);
   } else {
     swal("Đăng nhập thất bại, vui lòng kiểm tra lại thông tin");

@@ -181,3 +181,8 @@ var btnElement = document.querySelector(".btn-checkout-cart");
 btnElement.addEventListener("click", function () {
   window.location.href = "checkout.html";
 });
+
+var btnBackToShopping = document.querySelector(".back-to-shopping");
+btnBackToShopping.addEventListener("click", function () {
+  window.location.href = "product.html";
+});

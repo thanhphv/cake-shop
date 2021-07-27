@@ -1,5 +1,5 @@
 var productData = [];
-function addToCart(id, price) {
+function addToCart(id, name, url, price) {
   alert("Đã thêm sản phẩm vào giỏ hàng");
   var itemCartData = getLocalStorage();
   var isExist = false;
@@ -11,7 +11,7 @@ function addToCart(id, price) {
     }
   }
   if (isExist == false) {
-    var itemCart = createItemCart(id, price, 1);
+    var itemCart = createItemCart(id, name, url, price, 1);
     itemCartData.push(itemCart);
   }
   setLocalStorage(itemCartData);
@@ -20,9 +20,9 @@ function addToCart(id, price) {
 
 var keyData = "itemCartData";
 
-function createItemCart(id, price, quantity) {
+function createItemCart(id, name, url, price, quantity) {
   var itemCart = new Object();
-  (itemCart.id = id), (itemCart.quantity = quantity), (itemCart.price = price);
+  (itemCart.id = id), (itemCart.name = name), (itemCart.url = url), (itemCart.price = price), (itemCart.quantity = quantity);
   return itemCart;
 }
 
@@ -90,7 +90,6 @@ function renderCart() {
       var itemCartElement = document.querySelector("#cart-body");
       itemCartElement.innerHTML = htmls;
       updateCart();
-      // totalCost();
     });
   numberOfCart();
 }
@@ -137,6 +136,8 @@ function updateCart() {
         UpdateCartLocalstorage(
           createItemCart(
             Number(node.attr("id-product")),
+            node.attr("p-name"),
+            node.attr("url-product"),
             node.attr("price-product"),
             quantity
           )

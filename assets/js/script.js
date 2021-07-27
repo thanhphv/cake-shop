@@ -63,13 +63,16 @@ const usernameLogined = document.querySelector('.username-logined')
 
 function userLogin() {
   let jsonUserLoginedData = JSON.parse(localStorage.getItem('userLoginedData'));
-  usernameLogined.textContent = jsonUserLoginedData[0].name
-  if (jsonUserLoginedData.length > 0) {
-    userLogined.classList.add('login-active')
-    userLogout.classList.add('logout-deactive')
-  } else {
-    userLogout.classList.remove('logout-deactive')
+  if (jsonUserLoginedData != null) {
+    usernameLogined.textContent = jsonUserLoginedData[0].name
+    if (jsonUserLoginedData.length > 0) {
+      userLogined.classList.add('login-active')
+      userLogout.classList.add('logout-deactive')
+    } else {
+      userLogout.classList.remove('logout-deactive')
+    }
   }
+
 }
 userLogin()
 
@@ -92,7 +95,7 @@ fetch(teaAPI)
       <!-- img -->
       <div class="product-img">
           <!-- add cart -->
-          <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${tea.id},${tea.price})">
+          <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${tea.id},'${tea.name}','${tea.url}',${tea.price})">
               <i class="fas fa-shopping-cart"></i>
           </a>
           <a href="javascript: void (0)" class="add-view">
@@ -123,7 +126,7 @@ fetch(teaAPI)
               <!-- img -->
               <div class="product-img">
                   <!-- add cart -->
-                  <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${cake.id},${cake.price})">
+                  <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${cake.id},'${cake.name}','${cake.url}',${cake.price})">
                       <i class="fas fa-shopping-cart"></i>
                   </a>
                   <a href="javascript: void (0)" class="add-view">
@@ -181,7 +184,7 @@ fetch(cakeAPI)
         <!-- img -->
         <div class="product-img">
             <!-- add cart -->
-            <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${cake.id},${cake.price})">
+            <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${cake.id},'${cake.name}','${cake.url}',${cake.price})">
                 <i class="fas fa-shopping-cart"></i>
             </a>
             <a href="javascript: void (0)" class="add-view">
@@ -211,7 +214,7 @@ fetch(creamAPI)
       <!-- img -->
       <div class="product-img">
           <!-- add cart -->
-          <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${cream.id},${cream.price})">
+          <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${cream.id},'${cream.name}','${cream.url}',${cream.price})">
               <i class="fas fa-shopping-cart"></i>
           </a>
           <a href="javascript: void (0)" class="add-view">
@@ -241,7 +244,7 @@ fetch(coffeAPI)
         <!-- img -->
         <div class="product-img">
             <!-- add cart -->
-            <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${coffe.id},${coffe.price})">
+            <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${coffe.id},'${coffe.name}','${coffe.url}',${coffe.price})">
                 <i class="fas fa-shopping-cart"></i>
             </a>
             <a href="javascript: void (0)" class="add-view">
@@ -271,7 +274,7 @@ fetch(drinkAPI)
             <!-- img -->
             <div class="product-img">
                 <!-- add cart -->
-                <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${drink.id},${drinks.price})">
+                <a href="javascript: void (0)" class="add-cart" onclick="addToCart(${drink.id},'${drink.name}','${drink.url}',${drink.price})">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
                 <a href="javascript: void (0)" class="add-view">

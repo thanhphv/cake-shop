@@ -29,21 +29,33 @@
                 </a>
                 <h2>Thông tin nhận hàng</h2>
                 <form action="" class="form-checkout">
-                    <input type="email" name="email" id="email" placeholder="Email">
-                    <input type="text" name="name" id="" placeholder="Họ và tên">
-                    <input type="text" name="phone" id="" placeholder="Số điện thoại (tùy chọn)">
-                    <input type="text" name="place" id="" placeholder="Địa chỉ (tùy chọn)">
-                    <select name="provinde" id="">
-                        <option value="" selected="selected">Tỉnh thành</option>
-                        <option value="">Hà Nội</option>
-                        <option value="">Nam Định</option>
-                    </select>
-                    <select name="district" id="">
-                        <option value="" selected="selected">Quận huyện</option>
-                        <option value="">Hà Nội</option>
-                        <option value="">Nam Định</option>
-                    </select>
-                    <textarea name="note" id="">Ghi chú (tùy chọn)</textarea>
+                    <div class="form-control">
+                        <input type="text" id="email" placeholder="Enter your email address" autocomplete="off">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="fullname" placeholder="Enter your name" autocomplete="off">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="phone" placeholder="Enter your phone" autocomplete="off">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="place" placeholder="Enter your place" autocomplete="off">
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error Msg</small>
+                    </div>
+                    <div class="form-control">
+                        <textarea name="note" id="note" placeholder='Ghi chú (tùy chọn)'></textarea>
+                    </div>
                 </form>
             </div>
             <div class="checkout-transport">
@@ -88,7 +100,7 @@
                         </div>
                         <div class="summary-button">
                             <a href="cart.html">Quay về giỏ hàng</a>
-                            <button type="button">Đặt hàng</button>
+                            <button type="button" class="btn-checkout">Đặt hàng</button>
                         </div>
                     </div>
                 </div>
@@ -101,9 +113,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="./assets/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./assets/js/script.js"></script>
-
-    <script src="./assets/js/pagination.js"></script>
     <script src="./assets/js/cart.js"></script>
     <script src="./assets/js/checkout.js"></script>
 

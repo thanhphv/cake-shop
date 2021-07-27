@@ -41,7 +41,7 @@ function renderProduct(products) {
                 <!-- img -->
                 <div class="product-img">
                     <!-- add cart -->
-                    <a href="javascript:void(0)" class="add-cart" onclick="addToCart(${product.id},${product.price})">
+                    <a href="javascript:void(0)" class="add-cart" onclick="addToCart(${product.id},'${product.name}','${product.url}', ${product.price})">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
                     <a href="javascript:void(0)" class="add-view">
@@ -83,6 +83,7 @@ function changPage() {
     });
   }
 }
+
 
 //1: 0,...,8
 //2: 9....17

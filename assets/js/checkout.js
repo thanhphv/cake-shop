@@ -44,10 +44,6 @@ const checkoutNote = document.getElementById("note")
 
 btnCheckout.addEventListener("click", () => {
   validate()
-  localStorage.removeItem('itemCartData')
-  setTimeout(() => {
-    window.location.href = "index.html";
-  }, 2000);
 })
 
 function sendData(sRate, count, emailVal, fullnameVal, phoneVal, placeVal, noteVal) {
@@ -57,7 +53,14 @@ function sendData(sRate, count, emailVal, fullnameVal, phoneVal, placeVal, noteV
     var user = createUserCheckout(emailVal, fullnameVal, phoneVal, placeVal, noteVal, totalCost, cartItems);
     userData.push(user);
     setUserToLocalStorage(userData)
+
+    localStorage.removeItem('itemCartData')
     swal("Mua hàng thành công");
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 2000);
+  } else {
+    swal("Vui lòng điền đầy đủ thông tin");
   }
 }
 
@@ -90,7 +93,6 @@ function isName(nameVal) {
 }
 
 function validate() {
-  const productInCart = JSON.parse(localStorage.getItem('itemCartData'))
   const emailVal = checkoutEmail.value.trim();
   const fullnameVal = checkoutName.value.trim();
   const phoneVal = checkoutPhone.value.trim();

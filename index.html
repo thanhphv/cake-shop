@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="./assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+</head>
+
+<body>
+    <!-- header -->
+    <nav>
+        <div class="social-call">
+            <div class="social-call-container">
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="phone">
+                    <a href="#">Call: +12345678</a>
+                    <div class="user-logout" id="user">
+                        <a href="login.html">Đăng nhập</a>
+                        <span>|</span>
+                        <a href="register.html">Đăng ký</a>
+                    </div>
+
+                    <div class="user-logined" id="user">
+                        <a>Xin chào <span class="username-logined"></span></a>
+                        <span>|</span>
+                        <a class="btn-logout">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- nav-pc -->
+        <div class="navigation-pc">
+            <div class="navigation">
+                <a href="index.html" class="logo">
+                    <img src="./assets/img/logo.jpg" alt="">
+                </a>
+                <div class="toggle"></div>
+                <ul class="menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li class="menu-link"><a href="product.html"><i class="fas fa-birthday-cake"></i>Sản phẩm</a>
+                        <ul class="menu-down">
+                            <li><a href="#">Trà</a></li>
+                            <li><a href="#">Bánh</a></li>
+                            <li><a href="#">Kem</a></li>
+                            <li><a href="#">Coffe</a></li>
+                            <li><a href="#">Nước ép</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> Giới thiệu</a></li>
+                    <li><a href="#"><i class="far fa-edit"></i> Blog</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> Liên hệ</a></li>
+                </ul>
+                <div class="right-menu">
+                    <a href="#" class="search"><i class="fas fa-search"></i></a>
+                    <a href="cart.html"><i class="fas fa-shopping-cart"></i>
+                        <span class="num-cart">0</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- nav-mobile -->
+        <div class="navigation-mobile">
+            <header class="header">
+                <div class="container">
+                    <div class="nav">
+                        <div class="nav-toggle">
+                            <a><i class="fas fa-align-justify"></i></a>
+                        </div>
+                        <div class="logo">
+                            <img src="./assets/img/logo.jpg" alt="" srcset="">
+                        </div>
+                        <div class="right-menu">
+                            <a href="cart.html"><i class="fas fa-shopping-cart"></i>
+                                <span class="num-cart">0</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </header>
+            <div class="nav-overlay"></div>
+            <nav class="nav-mobile">
+                <div class="action">
+                    <img src="./assets/img/user.png" alt="">
+                    <div class="link-acc">
+                        <a href="login.html">Đăng nhập</a>
+                        <a href="register.html">Đăng ký</a>
+                    </div>
+                    <div class="search">
+                        <div class="search-form">
+                            <form action="">
+                                <input type="text" name="" id="" placeholder="Search...">
+                                <span class="search-btn">
+                                    <button>
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="close">&times;</div>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="product.html">Sản phẩm
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Trà</a>
+                                <a href="#">Kem</a>
+                                <a href="#">Bánh</a>
+                                <a href="#">Coffe</a>
+                                <a href="#">Nước ép</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </nav>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- banner -->
+    <div id="banner">
+        <img src="./assets/img/slider_1.jpg" alt="">
+    </div>
+
+    <!-- product-special -->
+    <section id="product-special">
+        <div class="grid">
+            <div class="title-section">
+                <div class="icon__title-section">
+                    <a href="#"><img src="./assets/img/icon-banh.png" alt="" srcset=""></a>
+
+                </div>
+
+                <div class="main__title-section">
+                    <h2>
+                        <a href="#">MÓN ĂN NỔI BẬT</a>
+                    </h2>
+                </div>
+            </div>
+            <div class="product-item-special">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <!-- slider -->
+                    </div>
+                </div>
+                <!-- <div class="swiper-container mySwiper">
+                    <div class="swiper-wrapper"> -->
+                        <!-- Slides -->
+
+                    <!-- </div>
+                </div> -->
+            </div>
+
+        </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- product-popular -->
+    <section id="product-popular">
+        <div class="grid">
+            <div class="title-section">
+                <div class="icon__title-section">
+                    <a href="#"><img src="./assets/img/icon-banh.png" alt="" srcset=""></a>
+
+                </div>
+
+                <div class="main__title-section">
+                    <h2>
+                        <a href="#">MÓN ĂN ĐƯỢC ƯA CHUỘNG</a>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="product-item-popular">
+                <div class="product-tab">
+                    <ul>
+                        <li class="tab-item active-link" onclick="changProductList('cake', this)">Bánh</li>
+                        <li class="tab-item" onclick="changProductList('tea', this)">Trà</li>
+                        <li class="tab-item" onclick="changProductList('cream', this)">Kem tươi</li>
+                        <li class="tab-item" onclick="changProductList('coffe', this)">Coffe</li>
+                        <li class="tab-item" onclick="changProductList('drink', this)">Nước ép</li>
+                    </ul>
+                </div>
+
+                <!-- product-tab-mobile -->
+                <div class="product-tab-mobile">
+                    <select name="mobile-tab" id="cars" form="carform">
+                        <option value="cake">Bánh</option>
+                        <option value="tea">Trà</option>
+                        <option value="cream">Kem tươi</option>
+                        <option value="coffe">Coffe</option>
+                        <option value="drink">Nước ép</option>
+                    </select>
+                </div>
+
+                <!-- product-item -->
+                <div id="cake" class="product-tab-content container">
+                </div>
+
+                <div id="tea" class="product-tab-content container">
+                </div>
+
+                <div id="cream" class="product-tab-content container">
+                </div>
+
+                <div id="coffe" class="product-tab-content container">
+                </div>
+
+                <div id="drink" class="product-tab-content container">
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- product-new -->
+
+    <section id="product-new">
+        <div class="title-section">
+            <div class="icon__title-section">
+                <a href="#"><img src="./assets/img/icon-banh.png" alt="" srcset=""></a>
+
+            </div>
+
+            <div class="main__title-section">
+                <h2>
+                    <a href="#">MÓN ĂN MỚI</a>
+                </h2>
+            </div>
+        </div>
+
+        <div class="product-new-wrap">
+            <div class="product-box-new">
+                <div class="product-box-new-detail">
+                    <div class="product-thumbnail">
+                        <img src="./assets/img/lamminton.jpg" alt="">
+                    </div>
+                    <div class="product-new-info">
+                        <div class="product-new-details">
+                            <a href="#" class="p-name">Drawstring T-Shirt</a>
+                            <p class="product-price">300.000₫</p>
+                        </div>
+                        <div class="product-summary">
+                            <span>Bánh sinh nhật hay bánh gatô là một loại món ăn thường có ý nghĩa quan trọng và
+                                đặc...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-box-new">
+                <div class="product-box-new-detail">
+                    <div class="product-thumbnail">
+                        <img src="./assets/img/lamminton.jpg" alt="">
+                    </div>
+                    <div class="product-new-info">
+                        <div class="product-new-details">
+                            <a href="#" class="p-name">Drawstring T-Shirt</a>
+                            <p class="product-price">300.000₫</p>
+                        </div>
+                        <div class="product-summary">
+                            <span>Bánh sinh nhật hay bánh gatô là một loại món ăn thường có ý nghĩa quan trọng và
+                                đặc...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-box-new">
+                <div class="product-box-new-detail">
+                    <div class="product-thumbnail">
+                        <img src="./assets/img/lamminton.jpg" alt="">
+                    </div>
+                    <div class="product-new-info">
+                        <div class="product-new-details">
+                            <a href="#" class="p-name">Drawstring T-Shirt</a>
+                            <p class="product-price">300.000₫</p>
+                        </div>
+                        <div class="product-summary">
+                            <span>Bánh sinh nhật hay bánh gatô là một loại món ăn thường có ý nghĩa quan trọng và
+                                đặc...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-box-new">
+                <div class="product-box-new-detail">
+                    <div class="product-thumbnail">
+                        <img src="./assets/img/lamminton.jpg" alt="">
+                    </div>
+                    <div class="product-new-info">
+                        <div class="product-new-details">
+                            <a href="#" class="p-name">Drawstring T-Shirt</a>
+                            <p class="product-price">300.000₫</p>
+                        </div>
+                        <div class="product-summary">
+                            <span>Bánh sinh nhật hay bánh gatô là một loại món ăn thường có ý nghĩa quan trọng và
+                                đặc...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- blog -->
+
+    <section id="blog">
+        <div class="title-section">
+            <div class="icon__title-section">
+                <a href="#"><img src="./assets/img/icon-banh.png" alt="" srcset=""></a>
+
+            </div>
+
+            <div class="main__title-section">
+                <h2>
+                    <a href="#">BLOGS</a>
+                </h2>
+            </div>
+        </div>
+        <div class="product-item-special grid">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="blog-box">
+                            <!-- img -->
+                            <div class="blog-img">
+                                <img src="./assets/img/pexels-photo-904941.jpeg" alt="">
+                            </div>
+                            <div class="tag-link">
+                                <span><a href="#">CHIA SẺ</a></span>
+                            </div>
+                            <div class="blog-title">
+                                <p>Sữa từ hạt: Thức uống khắc phục mọi nhược điểm của sữa</p>
+                            </div>
+                            <a href="#" class="detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="blog-box">
+                            <!-- img -->
+                            <div class="blog-img">
+                                <img src="./assets/img/pexels-photo-904941.jpeg" alt="">
+                            </div>
+                            <div class="tag-link">
+                                <span><a href="#">CHIA SẺ</a></span>
+                            </div>
+                            <div class="blog-title">
+                                <p>Sữa từ hạt: Thức uống khắc phục mọi nhược điểm của sữa</p>
+                            </div>
+                            <a href="#" class="detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="blog-box">
+                            <!-- img -->
+                            <div class="blog-img">
+                                <img src="./assets/img/pexels-photo-904941.jpeg" alt="">
+                            </div>
+                            <div class="tag-link">
+                                <span><a href="#">CHIA SẺ</a></span>
+                            </div>
+                            <div class="blog-title">
+                                <p>Sữa từ hạt: Thức uống khắc phục mọi nhược điểm của sữa</p>
+                            </div>
+                            <a href="#" class="detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="blog-box">
+                            <!-- img -->
+                            <div class="blog-img">
+                                <img src="./assets/img/pexels-photo-904941.jpeg" alt="">
+                            </div>
+                            <div class="tag-link">
+                                <span><a href="#">CHIA SẺ</a></span>
+                            </div>
+                            <div class="blog-title">
+                                <p>Sữa từ hạt: Thức uống khắc phục mọi nhược điểm của sữa</p>
+                            </div>
+                            <a href="#" class="detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="blog-box">
+                            <!-- img -->
+                            <div class="blog-img">
+                                <img src="./assets/img/pexels-photo-904941.jpeg" alt="">
+                            </div>
+                            <div class="tag-link">
+                                <span><a href="#">CHIA SẺ</a></span>
+                            </div>
+                            <div class="blog-title">
+                                <p>Sữa từ hạt: Thức uống khắc phục mọi nhược điểm của sữa</p>
+                            </div>
+                            <a href="#" class="detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="blog-box">
+                            <!-- img -->
+                            <div class="blog-img">
+                                <img src="./assets/img/pexels-photo-904941.jpeg" alt="">
+                            </div>
+                            <div class="tag-link">
+                                <span><a href="#">CHIA SẺ</a></span>
+                            </div>
+                            <div class="blog-title">
+                                <p>Sữa từ hạt: Thức uống khắc phục mọi nhược điểm của sữa</p>
+                            </div>
+                            <a href="#" class="detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        </div>
+
+    </section>
+
+    <!-- introduce -->
+
+    <section id="introduce">
+        <div class="introduce-container">
+            <div class="image-introduce">
+                <img src="./assets/img/section_introduce_avatar.png" alt="">
+            </div>
+
+            <div class="shop-introduce">
+                <div class="logo">
+                    <img src="./assets/img/logo.jpg" alt="">
+                </div>
+                <div class="content-shop">
+                    <span>Được khởi xướng và vận hành bởi một nhóm người trẻ năng động, cửa hàng bánh ngọt và đồ uống
+                        DELICIOUS đang dần khẳng định chỗ đứng trong thị trường đồ ăn giải khát phong phú và đa dạng ở
+                        Hà Nội. Hướng tới đối tượng khách hàng là các bạn trẻ năng động, chúng tôi quan tâm tới chất
+                        lượng và hình ảnh của sản phẩm.<br><br></span>
+                    <a href="#" class="detail">Xem chi tiết</a>
+                </div>
+                <div class="social-introduce">
+                    <p>Kết nối với chúng tôi</p>
+                    <div class="social-item">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- service -->
+
+    <section id="service">
+        <div class="service-box">
+            <div class="service-image">
+                <img src="./assets/img/dichvu_1.png" alt="">
+            </div>
+            <div class="service-title">
+                <span>CHUYỂN PHÁT NHANH</span>
+
+            </div>
+            <div class="service-content">
+                <span>Chúng tôi miễn phí với đơn hàng trên 350.000đ tại Hà Nội và free ship toàn quốc với đơn hàng
+                    700.000đ</span>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="service-image">
+                <img src="./assets/img/dichvu_2.png" alt="">
+            </div>
+            <div class="service-title">
+                <span>LÀM BÁNH THEO YÊU CẦU</span>
+
+            </div>
+            <div class="service-content">
+                <span>Một chiếc bánh được thiết kế riêng biệt, độc đáo dành cho người thân, bạn bè chắc hẳn sẽ là một
+                    món quà bất ngờ và đặc biệt nhất.</span>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="service-image">
+                <img src="./assets/img/dichvu_3.png" alt="">
+            </div>
+            <div class="service-title">
+                <span>HỖ TRỢ KHÁCH HÀNG</span>
+
+            </div>
+            <div class="service-content">
+                <span>Trung tâm chăm sóc khách hàng của DELICIOUS, hotline 1800 6750 để được hỗ trợ giải đáp.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer id="footer">
+        <div class="grid">
+            <div class="footer-container">
+                <div class="footer-box">
+                    <div class="footer-contact">
+                        <h4>LIÊN HỆ</h4>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i><span> 266 Đội Cấn, Phường Liễu Giai, Quận Ba Đình,
+                                    Hà
+                                    Nội</span>></li>
+                            <li><i class="fas fa-phone"></i><span> 18006789<br>Thứ 2 - Chủ Nhật: 9:00 - 18:00</span>
+                            </li>
+                            <li><i class="fas fa-envelope"></i><span> support@gmail.com</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-box">
+                    <div class="footer-support">
+                        <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                        <ul>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Sản phẩm</a></li>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-box">
+                    <div class="footer-policy">
+                        <h4>CHÍNH SÁCH MUA HÀNG</h4>
+                        <ul>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Sản phẩm</a></li>
+                            <li><a href="#">Giới thiệu</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-box">
+                    <div class="footer-info">
+                        <h4>ĐĂNG KÝ NHẬN TIN</h4>
+                        <p>Đăng ký nhận thông tin khuyến mãi và món ăn mới</p>
+                        <input type="email" name="" id="" placeholder="Email .....">
+                        <div class="tag-link">
+                            <span><a href="#">CHIA SẺ</a></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/owlcarousel/owl.carousel.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/pagination.js"></script>
+    <script src="./assets/js/cart.js"></script>
+    <script src="./assets/js/login.js"></script>
+
+</body>
+
+</html>
